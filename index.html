@@ -1,99 +1,21 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Random Hex Colors</title>
-		<meta name="description" content="">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="">
-	</head>
-	<body>		
-		<script src="" async defer></script>
-	</body>
-</html>
-	<style>
-		body {
-            background: rgb(248,252,254);
-            background: radial-gradient(circle, rgba(248,252,254,1) 9%, rgba(255,255,255,1) 14%, rgba(192,174,238,1) 93%);
-			text-align: center;
-			font-size: 24px;
-			font-family: Arial, sans-serif;
-		}
-		#generate-button {
-			margin: 20px;
-			padding: 10px 20px;
-			font-size: 24px;
-			font-family: Arial, sans-serif;
-			background-color: gray;
-			color: #ffffff;
-			border-radius: 10px;
-			border: none;
-			cursor: pointer;
-		}
-		#colors {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: center;
-			align-items: center;
-		}
-		.color-box {
-			display: inline-block;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-			width: 150px;
-			height: 50vh;
-			margin: 20px;
-			border-radius: 10px;
-			transition: transform 0.3s ease-in-out;
-			cursor: pointer;
-		}
-		.color-box:hover {
-			transform: scale(1.1);
-		}
-		.color-box .color-label {
-            display: flex;
-            justify-content: center;
 
-			margin-top: 10px;
-			font-size: 16px;
-			font-family: Franklin Gothic;
-			color: #333333;
-			user-select: all;
-		}
-	</style>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Random Hex Colors</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 	<h1>Random Hex Colors</h1>
 	<button id="generate-button">Generate Colors</button>
 	<div id="colors">
 	</div>
-	<script>
-		function getRandomHexColor() {
-			let letters = "0123456789ABCDEF";
-			let color = "#";
-			for (let i = 0; i < 6; i++) {
-				color += letters[Math.floor(Math.random() * 16)];
-			}
-			return color;
-		}
-
-		function generateColors() {
-			let colorsDiv = document.getElementById("colors");
-			colorsDiv.innerHTML = "";
-			for (let i = 0; i < 3; i++) {
-				let color = getRandomHexColor();
-				let colorBox = document.createElement("div");
-				colorBox.classList.add("color-box");
-				colorBox.style.backgroundColor = color;
-				colorBox.innerHTML = `<div class="color-label">${color}</div>`;
-				colorsDiv.appendChild(colorBox);
-			}
-		}
-
-		let generateButton = document.getElementById("generate-button");
-		generateButton.addEventListener("click", generateColors);
-	</script>
+	<script src="script.js" async defer></script>
 </body>
+
 </html>
