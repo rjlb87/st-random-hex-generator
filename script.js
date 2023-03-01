@@ -8,7 +8,7 @@ function getRandomHexColor() {
   return color;
 }
 
-function generateColors() {
+function changeBoxColors(){
   let colorsDiv = document.getElementById("colors");
   colorsDiv.innerHTML = "";
   for (let i = 0; i < 3; i++) {
@@ -22,4 +22,4 @@ function generateColors() {
 }
 
 let generateButton = document.getElementById("generate-button");
-generateButton.addEventListener("click", generateColors);
+generateButton.addEventListener("click",  changeBoxColors);
